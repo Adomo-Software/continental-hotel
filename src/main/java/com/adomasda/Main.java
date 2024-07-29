@@ -1,4 +1,4 @@
-package com.binaryin;
+package com.adomasda;
 
 public class Main {
     public static void main(String[] args) {
