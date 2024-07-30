@@ -2,22 +2,22 @@ package com.adomasda;
 
 import org.junit.jupiter.api.Test;
 
-public class HouseTest {
+public class RoomTest {
 
     @Test
     public void SimpleTest(){
         System.err.println("SimpleTest");
-        House house = new House(1,2);
-        System.out.println(house.isOwenOn());
-        System.out.println(house);
+        Room room = new Room(1,2);
+        System.out.println(room.isOwenOn());
+        System.out.println(room);
     }
 
     @Test
     public void FloorTest() {
         System.err.println("FloorTest");
         Floor floor = new Floor();
-        floor.addRoom(new House(1,2));
-        floor.printHouse();
+        floor.addRoom(new Room(1,2));
+        floor.printRoom();
     }
 }
 

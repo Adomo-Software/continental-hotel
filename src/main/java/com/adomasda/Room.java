@@ -4,12 +4,12 @@ package com.adomasda;
 import java.util.ArrayList;
 import java.util.List;
 
-interface HouseInterface {
+interface RoomInterface {
     boolean isOwenOn();  // getter
     void  getAccess(String name); // setter
 }
 
-abstract class AbstractRoom implements HouseInterface {
+abstract class AbstractRoom implements RoomInterface {
     protected int roomNumber;
     protected int capacity;
 
@@ -40,7 +40,7 @@ class Floor {
         rooms.add(room);
     }
 
-    public void printHouse() {
+    public void printRoom() {
         if (this.rooms.size() > 0) {
             System.out.print("(" + this.rooms.size() + " Rooms)");
         }
@@ -51,11 +51,11 @@ class Floor {
     }
 }
 
-class House extends AbstractRoom {
+class Room extends AbstractRoom {
     private boolean owenOn = false;
     private String accessName; // never used idk what to do with it ¯\_ (ツ)_/¯
 
-    public House(int capacity, int roomNumber) {
+    public Room(int capacity, int roomNumber) {
         super(capacity, roomNumber);
     }
 
