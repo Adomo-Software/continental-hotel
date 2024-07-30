@@ -8,5 +8,7 @@ public class HouseTest {
     public void SimpleTest(){
         House house = new House();
         System.out.println(house.isOwenOn());
+        System.out.println(house);
+
     }
 }

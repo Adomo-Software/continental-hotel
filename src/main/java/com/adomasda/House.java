@@ -5,7 +5,22 @@ interface HouseInterface {
     void  getAccess(String name); // setter
 }
 
-class House implements HouseInterface {
+abstract class AbstractRoom implements HouseInterface {
+    protected int roomNumber;
+    protected int capacity;
+
+//    public AbstractRoom(int capacity, int roomNumber) {
+//        this.roomNumber = roomNumber;
+//        this.capacity = capacity;
+//    }
+
+    @Override
+    public String toString() {
+        return "Room capacity: " + capacity + " | Room Number: " + roomNumber;
+    }
+}
+
+class House extends AbstractRoom {
     private boolean owenOn = false;
     private String accessName; // never used idk what to do with it ¯\_ (ツ)_/¯
 
