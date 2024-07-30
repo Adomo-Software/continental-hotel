@@ -1,13 +1,12 @@
 package com.adomasda;
 
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
 interface RoomInterface {
-    boolean isOwenOn();  // getter
-    void  getAccess(String name); // setter
+    boolean isOwenOn(); // getter
+    void getAccess(String name); // setter
     String toString(); // Why there isn't a requirement to implement toString???
     // (java doesn't complain if i don't implement it)
 }
@@ -40,14 +39,12 @@ class Room implements RoomInterface {
     int capacity;
     int roomNumber;
 
-
-
     public Room(int capacity, int roomNumber) {
         this.capacity = capacity;
         this.roomNumber = roomNumber;
     }
 
-    public void  getAccess(String name) {
+    public void getAccess(String name) {
         accessName = name;
         owenOn = true;
     }
@@ -74,7 +71,7 @@ class Kitchen implements RoomInterface {
         return owenOn;
     }
 
-    public void  getAccess(String name) {
+    public void getAccess(String name) {
         accessName = name;
         owenOn = true;
     }
@@ -96,7 +93,7 @@ class ServiceRoom implements RoomInterface {
         return owenOn;
     }
 
-    public void  getAccess(String name) {
+    public void getAccess(String name) {
         accessName = name;
         owenOn = true;
     }
@@ -149,7 +146,7 @@ class Garage implements RoomInterface {
         return owenOn;
     }
 
-    public void  getAccess(String name) {
+    public void getAccess(String name) {
         accessName = name;
         owenOn = true;
     }
