@@ -5,16 +5,14 @@ import java.util.List;
 import java.util.Stack;
 
 interface RoomInterface {
-    boolean isOwenOn(); // getter
-    void getAccess(String name); // setter
-    String toString(); // Why there isn't a requirement to implement toString???
-    // (java doesn't complain if i don't implement it)
+    boolean isOwenOn();
+    void getAccess(String name);
 }
 
 class Floor {
     private List<RoomInterface> rooms;
 
-    Floor() {
+    public Floor() {
         this.rooms = new ArrayList<>();
     }
 
@@ -27,7 +25,7 @@ class Floor {
             System.out.print("(" + this.rooms.size() + " Rooms)");
         }
         System.out.println();
-        for (RoomInterface room : this.rooms) {
+        for (RoomInterface room : this.rooms) {nterface
             System.out.println(room);
         }
     }
@@ -35,9 +33,9 @@ class Floor {
 
 class Room implements RoomInterface {
     private boolean owenOn = false;
-    private String accessName; // never used idk what to do with it ¯\_ (ツ)_/¯
-    int capacity;
-    int roomNumber;
+    private String accessName;
+    private int capacity;
+    private int roomNumber;
 
     public Room(int capacity, int roomNumber) {
         this.capacity = capacity;
@@ -45,8 +43,8 @@ class Room implements RoomInterface {
     }
 
     public void getAccess(String name) {
-        accessName = name;
-        owenOn = true;
+        this.accessName = name;
+        this.owenOn = true;
     }
 
     public boolean isOwenOn() {
@@ -60,8 +58,8 @@ class Room implements RoomInterface {
 
 class Kitchen implements RoomInterface {
     private boolean owenOn = false;
-    private String accessName; // never used idk what to do with it ¯\_ (ツ)_/¯
-    double foodCapacity;
+    private String accessName;
+    private double foodCapacity;
 
     public Kitchen(double foodCapacity) {
         this.foodCapacity = foodCapacity;
@@ -72,8 +70,8 @@ class Kitchen implements RoomInterface {
     }
 
     public void getAccess(String name) {
-        accessName = name;
-        owenOn = true;
+        this.accessName = name;
+        this.owenOn = true;
     }
     public String toString() {
         return "Food capacity: " + foodCapacity + " cubic meters";
@@ -82,7 +80,7 @@ class Kitchen implements RoomInterface {
 
 class ServiceRoom implements RoomInterface {
     private boolean owenOn = false;
-    private String accessName; // never used idk what to do with it ¯\_ (ツ)_/¯
+    private String accessName;
     private String type;
 
     public ServiceRoom(String type) {
@@ -94,8 +92,8 @@ class ServiceRoom implements RoomInterface {
     }
 
     public void getAccess(String name) {
-        accessName = name;
-        owenOn = true;
+        this.accessName = name;
+        this.owenOn = true;
     }
     public String toString() {
         return "Service room type: " + type;
@@ -103,7 +101,7 @@ class ServiceRoom implements RoomInterface {
 }
 
 class Car {
-    String model;
+    private String model;
     public Car(String model) {
         this.model = model;
     }
@@ -115,31 +113,11 @@ class Car {
 
 class Garage implements RoomInterface {
     private boolean owenOn = false;
-    private String accessName; // never used idk what to do with it ¯\_ (ツ)_/¯
+    private String accessName;
     private int carCapacity;
-    private Stack<Car> stack = new Stack<>();
 
     public Garage(int carCapacity) {
         this.carCapacity = carCapacity;
-    }
-
-    public boolean enterGarage(Car car) {
-        if (stack.size() <= carCapacity) {
-            stack.push(car);
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    public Car exitGarage() {
-        return stack.pop();
-    }
-
-    public void PrintGarageStorage() {
-        for (Car car : stack) {
-            System.out.println(car);
-        }
     }
 
     public boolean isOwenOn() {
@@ -147,8 +125,8 @@ class Garage implements RoomInterface {
     }
 
     public void getAccess(String name) {
-        accessName = name;
-        owenOn = true;
+        this.accessName = name;
+        this.owenOn = true;
     }
     public String toString() {
         return "Garage car capacity: " + carCapacity;
