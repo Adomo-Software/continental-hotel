@@ -3,6 +3,7 @@ package com.adomasda;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 interface RoomInterface {
     boolean isOwenOn();  // getter
@@ -79,5 +80,80 @@ class Kitchen implements RoomInterface {
     }
     public String toString() {
         return "Food capacity: " + foodCapacity + " cubic meters";
+    }
+}
+
+class ServiceRoom implements RoomInterface {
+    private boolean owenOn = false;
+    private String accessName; // never used idk what to do with it ¯\_ (ツ)_/¯
+    private String type;
+
+    public ServiceRoom(String type) {
+        this.type = type;
+    }
+
+    public boolean isOwenOn() {
+        return owenOn;
+    }
+
+    public void  getAccess(String name) {
+        accessName = name;
+        owenOn = true;
+    }
+    public String toString() {
+        return "Service room type: " + type;
+    }
+}
+
+class Car {
+    String model;
+    public Car(String model) {
+        this.model = model;
+    }
+    @Override
+    public String toString() {
+        return model;
+    }
+}
+
+class Garage implements RoomInterface {
+    private boolean owenOn = false;
+    private String accessName; // never used idk what to do with it ¯\_ (ツ)_/¯
+    private int carCapacity;
+    private Stack<Car> stack = new Stack<>();
+
+    public Garage(int carCapacity) {
+        this.carCapacity = carCapacity;
+    }
+
+    public boolean enterGarage(Car car) {
+        if (stack.size() <= carCapacity) {
+            stack.push(car);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public Car exitGarage() {
+        return stack.pop();
+    }
+
+    public void PrintGarageStorage() {
+        for (Car car : stack) {
+            System.out.println(car);
+        }
+    }
+
+    public boolean isOwenOn() {
+        return owenOn;
+    }
+
+    public void  getAccess(String name) {
+        accessName = name;
+        owenOn = true;
+    }
+    public String toString() {
+        return "Garage car capacity: " + carCapacity;
     }
 }
