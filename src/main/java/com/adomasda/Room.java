@@ -25,7 +25,7 @@ class Floor {
             System.out.print("(" + this.rooms.size() + " Rooms)");
         }
         System.out.println();
-        for (RoomInterface room : this.rooms) {nterface
+        for (RoomInterface room : this.rooms) {
             System.out.println(room);
         }
     }
