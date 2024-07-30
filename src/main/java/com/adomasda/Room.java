@@ -7,25 +7,11 @@ import java.util.List;
 interface RoomInterface {
     boolean isOwenOn();  // getter
     void  getAccess(String name); // setter
-}
-
-abstract class AbstractRoom implements RoomInterface {
-    protected int roomNumber;
-    protected int capacity;
-
-    public AbstractRoom(int capacity, int roomNumber) {
-        this.roomNumber = roomNumber;
-        this.capacity = capacity;
-    }
-
-    @Override
-    public String toString() {
-        return "Room capacity: " + capacity + " | Room Number: " + roomNumber;
-    }
+    String toString();
 }
 
 class Floor {
-    private List<AbstractRoom> rooms;
+    private List<RoomInterface> rooms;
 
     Floor() {
         this.rooms = new ArrayList<>();
@@ -36,7 +22,7 @@ class Floor {
 //        rooms.add(newRoom);
 //    }
 
-    public void addRoom(AbstractRoom room) {
+    public void addRoom(RoomInterface room) {
         rooms.add(room);
     }
 
@@ -45,18 +31,23 @@ class Floor {
             System.out.print("(" + this.rooms.size() + " Rooms)");
         }
         System.out.println();
-        for (AbstractRoom room : this.rooms) {
+        for (RoomInterface room : this.rooms) {
             System.out.println(room);
         }
     }
 }
 
-class Room extends AbstractRoom {
+class Room implements RoomInterface {
     private boolean owenOn = false;
     private String accessName; // never used idk what to do with it ¯\_ (ツ)_/¯
+    int capacity;
+    int roomNumber;
+
+
 
     public Room(int capacity, int roomNumber) {
-        super(capacity, roomNumber);
+        this.capacity = capacity;
+        this.roomNumber = roomNumber;
     }
 
     @Override
@@ -68,5 +59,10 @@ class Room extends AbstractRoom {
     @Override
     public boolean isOwenOn() {
         return owenOn;
+    }
+
+    @Override
+    public String toString() {
+        return "Room capacity: " + capacity + " | Room Number: " + roomNumber;
     }
 }
