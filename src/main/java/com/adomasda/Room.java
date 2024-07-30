@@ -7,7 +7,8 @@ import java.util.List;
 interface RoomInterface {
     boolean isOwenOn();  // getter
     void  getAccess(String name); // setter
-    String toString();
+    String toString(); // Why there isn't a requirement to implement toString???
+    // (java doesn't complain if i don't implement it)
 }
 
 class Floor {
@@ -16,11 +17,6 @@ class Floor {
     Floor() {
         this.rooms = new ArrayList<>();
     }
-
-//    private void addRoom(int capacity, int roomNumber) {
-//        AbstractRoom newRoom = new AbstractRoom(capacity, roomNumber);
-//        rooms.add(newRoom);
-//    }
 
     public void addRoom(RoomInterface room) {
         rooms.add(room);
@@ -50,19 +46,38 @@ class Room implements RoomInterface {
         this.roomNumber = roomNumber;
     }
 
-    @Override
     public void  getAccess(String name) {
         accessName = name;
         owenOn = true;
     }
 
-    @Override
     public boolean isOwenOn() {
         return owenOn;
     }
 
-    @Override
     public String toString() {
         return "Room capacity: " + capacity + " | Room Number: " + roomNumber;
+    }
+}
+
+class Kitchen implements RoomInterface {
+    private boolean owenOn = false;
+    private String accessName; // never used idk what to do with it ¯\_ (ツ)_/¯
+    double foodCapacity;
+
+    public Kitchen(double foodCapacity) {
+        this.foodCapacity = foodCapacity;
+    }
+
+    public boolean isOwenOn() {
+        return owenOn;
+    }
+
+    public void  getAccess(String name) {
+        accessName = name;
+        owenOn = true;
+    }
+    public String toString() {
+        return "Food capacity: " + foodCapacity + " cubic meters";
     }
 }
