@@ -44,4 +44,13 @@ public class RoomTest {
         Garage garage = new Garage(4);
         System.out.println(garage);
     }
+
+    @Test
+    public void PolymorphismTest() {
+        System.err.println("PolymorphismTest");
+        Room simpleRoom = new SimpleRoom(2,3);
+        Room serviceRoom = new ServiceRoom("Cinema");
+        Room kitchen = new Kitchen(2);
+        Room garage = new Garage(3);
+    }
 }

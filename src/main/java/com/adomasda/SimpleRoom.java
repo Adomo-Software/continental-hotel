@@ -1,7 +1,6 @@
 package com.adomasda;
 
 class SimpleRoom extends Room {
-//    private String accessName;
     private int capacity;
     private int roomNumber;
 
