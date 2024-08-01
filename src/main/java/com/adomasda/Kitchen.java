@@ -1,6 +1,6 @@
 package com.adomasda;
 
-class Kitchen implements Room {
+class Kitchen extends Room {
     private boolean ovenOn = false;
     private String accessName;
     private double foodCapacity;

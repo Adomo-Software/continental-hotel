@@ -1,7 +1,7 @@
 package com.adomasda;
 
-class SimpleRoom implements Room {
-    private String accessName;
+class SimpleRoom extends Room {
+//    private String accessName;
     private int capacity;
     private int roomNumber;
 
@@ -10,12 +10,6 @@ class SimpleRoom implements Room {
         this.roomNumber = roomNumber;
     }
 
-    public void setAccess(String name) {
-        this.accessName = name;
-    }
-    public String getAccess() {
-        return this.accessName;
-    }
     public String toString() {
         return "Room capacity: " + capacity + " | Room Number: " + roomNumber;
     }

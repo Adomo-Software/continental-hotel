@@ -1,6 +1,13 @@
 package com.adomasda;
 
-interface Room {
-    void setAccess(String name);
-    String getAccess();
+class Room {
+    private String accessName;
+
+    public void setAccess(String name) {
+        this.accessName = name;
+    }
+
+    public String getAccess() {
+        return this.accessName;
+    }
 }

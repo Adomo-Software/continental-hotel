@@ -1,9 +1,9 @@
 package com.adomasda;
 
-class ServiceRoom implements Room {
+class ServiceRoom extends Room {
     private boolean ovenOn = false;
-    private String accessName;
     private String type;
+    private String accessName;
 
     public ServiceRoom(String type) {
         this.type = type;
@@ -13,13 +13,12 @@ class ServiceRoom implements Room {
         return ovenOn;
     }
 
+    @Override
     public void setAccess(String name) {
         this.accessName = name;
         this.ovenOn = true;
     }
-    public String getAccess() {
-        return this.accessName;
-    }
+
     public String toString() {
         return "Service room type: " + type;
     }

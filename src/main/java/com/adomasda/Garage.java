@@ -11,8 +11,7 @@ class Car {
     }
 }
 
-class Garage implements Room {
-    private String accessName;
+class Garage extends Room {
     private int carCapacity;
     private boolean isEmpty;
 
@@ -21,13 +20,6 @@ class Garage implements Room {
         this.isEmpty = true;
     }
 
-    public void setAccess(String name) {
-        this.accessName = name;
-    }
-
-    public String getAccess() {
-        return this.accessName;
-    }
     public String toString() {
         return "Garage car capacity: " + carCapacity;
     }
