@@ -16,9 +16,8 @@ class Floor {
 
     public void printRoom() {
         if (this.rooms.size() > 0) {
-            System.out.print("(" + this.rooms.size() + " Rooms)");
+            System.out.print("(" + this.rooms.size() + " Rooms)\n");
         }
-        System.out.println();
         for (Room room : this.rooms) {
             System.out.println(room);
         }
