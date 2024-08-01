@@ -2,7 +2,7 @@ package com.adomasda;
 
 import org.junit.jupiter.api.Test;
 
-public class SimpleRoomTest {
+public class RoomTest {
     @Test
     public void FloorTest() {
         System.err.println("FloorTest");

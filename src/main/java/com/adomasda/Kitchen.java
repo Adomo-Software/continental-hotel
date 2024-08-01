@@ -1,7 +1,7 @@
 package com.adomasda;
 
 class Kitchen implements Room {
-    private boolean owenOn = false;
+    private boolean ovenOn = false;
     private String accessName;
     private double foodCapacity;
 
@@ -9,13 +9,16 @@ class Kitchen implements Room {
         this.foodCapacity = foodCapacity;
     }
 
-    public boolean isOwenOn() {
-        return owenOn;
+    public boolean isOvenOn() {
+        return ovenOn;
     }
 
-    public void getAccess(String name) {
+    public void setAccess(String name) {
         this.accessName = name;
-        this.owenOn = true;
+        this.ovenOn = true;
+    }
+    public String getAccess() {
+        return this.accessName;
     }
     public String toString() {
         return "Food capacity: " + foodCapacity + " cubic meters";

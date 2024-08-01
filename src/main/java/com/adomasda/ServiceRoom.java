@@ -1,7 +1,7 @@
 package com.adomasda;
 
 class ServiceRoom implements Room {
-    private boolean owenOn = false;
+    private boolean ovenOn = false;
     private String accessName;
     private String type;
 
@@ -9,13 +9,16 @@ class ServiceRoom implements Room {
         this.type = type;
     }
 
-    public boolean isOwenOn() {
-        return owenOn;
+    public boolean isOvenOn() {
+        return ovenOn;
     }
 
-    public void getAccess(String name) {
+    public void setAccess(String name) {
         this.accessName = name;
-        this.owenOn = true;
+        this.ovenOn = true;
+    }
+    public String getAccess() {
+        return this.accessName;
     }
     public String toString() {
         return "Service room type: " + type;

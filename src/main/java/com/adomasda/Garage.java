@@ -12,7 +12,6 @@ class Car {
 }
 
 class Garage implements Room {
-    private boolean owenOn = false;
     private String accessName;
     private int carCapacity;
     private boolean isEmpty;
@@ -22,19 +21,18 @@ class Garage implements Room {
         this.isEmpty = true;
     }
 
-    public boolean isOwenOn() {
-        return owenOn;
+    public void setAccess(String name) {
+        this.accessName = name;
     }
 
-    public void getAccess(String name) {
-        this.accessName = name;
-        this.owenOn = true;
+    public String getAccess() {
+        return this.accessName;
     }
     public String toString() {
         return "Garage car capacity: " + carCapacity;
     }
 
     public boolean isEmpty() {
-        return isEmpty; // its always empty
+        return isEmpty;
     }
 }
