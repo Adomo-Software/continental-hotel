@@ -27,14 +27,14 @@ public class RoomTest {
     public void KitchenTest() {
         System.err.println("KitchenTest");
         Kitchen kitchen = new Kitchen(3.5);
-
-        System.out.println(kitchen);
+        System.out.println(kitchen.isOvenOn());
     }
 
     @Test
     public void ServiceRoomTest() {
         System.err.println("ServiceRoomTest");
         ServiceRoom serviceRoom = new ServiceRoom("hair salon");
+        System.out.println(serviceRoom.getAccess());
         System.out.println(serviceRoom);
     }
 
